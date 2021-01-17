@@ -1,0 +1,29 @@
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+>>> person = Person('Sarah', 25)
+>>> print(person)
+<__main__.Person instance at 0x10d580638>
+>>> person
+<__main__.Person instance at 0x10d580638>
+
+and 
+
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    def __str__(self):
+        print('inside str')
+        return "Person: {}, Age: {}".format(self.name, self.age)
+    def __repr__(self):
+        print('inside repr')
+        return " Person: {}, Age: {}".format(self.name, self.age)
+>>> person = Person('Sarah', 25)
+>>> person
+inside repr
+Person: Sarah, Age: 25
+>>>print(person)
+inside str
+Person: Sarah, Age: 25
